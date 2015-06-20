@@ -1,0 +1,36 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int my_abs(int n){
+	return (n > 0) ? n : -n;
+}
+
+int main() {
+	/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+	int testNum;
+	int fd = 0;
+	int sd = 0;
+	int input;
+	int output;
+	vector <int> matrix;
+	int testSq;
+	cin >> testNum;
+	testSq = pow(testNum, 2);
+
+	for (int i = 0; i < testSq; ++i){
+		cin >> input;
+		matrix.push_back(input);
+	}
+	for (int i = 0; i < testNum; i++){
+		fd += matrix[i*testNum + i];
+		sd += matrix[((i + 1)*(testNum - 1))];
+	}
+	output = my_abs((fd - sd));
+	cout << output;
+	return 0;
+}
