@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int my_abs(int n){
+    return (n > 0)?n:-n;
+}
+int main() {
+    int input, k;
+    string str;
+    //char ch;
+    string out;
+    cin >> input >> str >> k;
+    for (char ch: str){
+        if((int)"A" <= (int)ch && (int)"Z" => (int)ch){
+            int num = (int)ch;
+            num =  num + k - 90;
+            num = my_abs(num);
+            out.push_back((char)num);
+            
+        }
+        else if((int)"a" <= (int)ch && (int)"z" => (int)ch){
+            int num = (int)ch;
+            num =  num + k - 122;
+            num = my_abs(num);
+            out.push_back((char)num);
+        }
+        else{
+            out.push_back(ch)
+        }
+    }
+    cout << str;
+    return 0;
+}
